@@ -1,18 +1,35 @@
-import React from 'react';
-import { EVDLogo } from '../common/EVDLogo';
-import { ArrowRight, Phone, Mail, MapPin, ShieldCheck, Award, Heart, Sparkles, ChevronRight, Globe, Lock } from 'lucide-react';
-import { officeLocations } from '../../data/locationsData';
+import React from "react";
+import {
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  ShieldCheck,
+  Award,
+  Heart,
+  Sparkles,
+} from "lucide-react";
+import evdLogo from "../../../public/images/evdt-logo.webp";
 
 interface FooterProps {
   onNavigate: (path: string) => void;
   onOpenConsultation: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }) => {
+
+
+
+export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
+  onOpenConsultation,
+}) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="main-footer" className="bg-slate-950 border-t border-slate-800 text-slate-300 text-xs relative overflow-hidden">
+    <footer
+      id="main-footer"
+      className="bg-slate-950 border-t border-slate-800 text-slate-300 text-xs relative overflow-hidden"
+    >
       {/* Top Pre-Footer Enterprise Banner */}
       <div className="border-b border-slate-800/80 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
@@ -25,7 +42,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
               Ready to engineer your next software breakthrough?
             </h3>
             <p className="text-slate-400 mt-1.5 max-w-2xl text-xs sm:text-sm leading-relaxed">
-              Schedule a technical discovery session with our senior solution architects. 100% intellectual property ownership, zero vendor lock-in.
+              Schedule a technical discovery session with our senior solution
+              architects. 100% intellectual property ownership, zero vendor
+              lock-in.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
@@ -37,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
-              onClick={() => onNavigate('/contact')}
+              onClick={() => onNavigate("/contact")}
               className="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs sm:text-sm transition-all cursor-pointer"
             >
               Contact Our Offices
@@ -52,25 +71,58 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
           {/* Column 1: Company Profile */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <EVDLogo variant="full" theme="dark" size="md" />
+              <button
+                onClick={() => onNavigate("/")}
+                className="inline-flex items-center rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                aria-label="EVD Technology Home"
+              >
+                <img
+                  src={evdLogo}
+                  alt="EVD Technology"
+                  className="
+        w-[140px]
+        sm:w-[155px]
+        md:w-[170px]
+        lg:w-[180px]
+        h-auto
+        object-contain
+      "
+                />
+              </button>
             </div>
 
             <p className="text-slate-400 leading-relaxed text-xs">
-              EVD Technology is a premier software engineering, enterprise platforms, cloud, and artificial intelligence company. With over 10 years of delivery excellence, we empower enterprises, state governments, fast-growing SaaS startups, and institutions to automate operations and scale with confidence.
+              EVD Technology is a premier software engineering, enterprise
+              platforms, cloud, and artificial intelligence company. With over
+              10 years of delivery excellence, we empower enterprises, state
+              governments, fast-growing SaaS startups, and institutions to
+              automate operations and scale with confidence.
             </p>
 
             <div className="space-y-2 pt-2 border-t border-slate-900 text-xs">
               <div className="flex items-start gap-2.5 text-slate-300">
                 <MapPin className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
-                <span>EVD Technology Hub, Raipur, Chhattisgarh, India - 492001</span>
+                <span>
+                  EVD Technology Hub, Raipur, Chhattisgarh, India - 492001
+                </span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-300">
                 <Phone className="w-4 h-4 text-red-400 shrink-0" />
-                <a href="tel:+919179944409" className="hover:text-red-400 transition-colors">+91 91799 44409</a>
+                <a
+                  href="tel:+919179944409"
+                  className="hover:text-red-400 transition-colors"
+                >
+                  +91 91799 44409
+                </a>
               </div>
               <div className="flex items-center gap-2.5 text-slate-300">
                 <Mail className="w-4 h-4 text-red-400 shrink-0" />
-                <a href="mailto:contact@evdtechnology.com" className="hover:text-red-400 transition-colors">contact@evdtechnology.com</a>
+                <a
+                  href="mailto:contact@evdtechnology.com"
+                  className="hover:text-red-400 transition-colors"
+                >
+                  contact@evdtechnology.com
+                </a>
               </div>
             </div>
 
@@ -93,47 +145,78 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <button onClick={() => onNavigate('/services/custom-software-development')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() =>
+                    onNavigate("/services/custom-software-development")
+                  }
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Custom Software Dev
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/saas-product-engineering')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() =>
+                    onNavigate("/services/saas-product-engineering")
+                  }
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   SaaS Product Engineering
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/web-development')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/web-development")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Web Application Dev
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/mobile-app-development')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/mobile-app-development")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Mobile App Development
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/erp-crm')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/erp-crm")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Custom ERP & CRM
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/ai-ml')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/ai-ml")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   AI & Machine Learning
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/cloud-devops')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/cloud-devops")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Cloud & DevOps
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services/government-tech')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services/government-tech")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Government Tech
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/services')} className="text-blue-400 font-semibold hover:underline text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/services")}
+                  className="text-blue-400 font-semibold hover:underline text-left cursor-pointer"
+                >
                   View All 13 Services →
                 </button>
               </li>
@@ -147,47 +230,76 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <button onClick={() => onNavigate('/products/evd-academy')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/evd-academy")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   EVD Academy (LMS)
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/erp-crm-suite')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/erp-crm-suite")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   EVD ERP/CRM Suite
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/transport-management-system')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() =>
+                    onNavigate("/products/transport-management-system")
+                  }
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Transport TMS
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/petrol-pump-management')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/petrol-pump-management")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Petrol Pump Solution
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/quick-commerce')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/quick-commerce")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Quick Commerce Suite
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/ai-tele-caller')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/ai-tele-caller")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   AI Tele Caller Voice
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/construction-erp')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/construction-erp")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Construction ERP
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products/manufacturing-erp')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products/manufacturing-erp")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Manufacturing ERP
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/products')} className="text-blue-400 font-semibold hover:underline text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/products")}
+                  className="text-blue-400 font-semibold hover:underline text-left cursor-pointer"
+                >
                   Explore All 9 Products →
                 </button>
               </li>
@@ -201,37 +313,60 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <button onClick={() => onNavigate('/industries/edtech')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/industries/edtech")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   EdTech & Learning
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/industries/healthcare')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/industries/healthcare")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Healthcare & Medical
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/industries/govtech')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/industries/govtech")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Government & GovTech
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/industries/retail-ecommerce')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/industries/retail-ecommerce")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Retail & E-Commerce
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/industries/travel-hospitality')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/industries/travel-hospitality")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Travel & Hospitality
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/industries/manufacturing-agritech')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() =>
+                    onNavigate("/industries/manufacturing-agritech")
+                  }
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Manufacturing & AgriTech
                 </button>
               </li>
               <li className="pt-2 border-t border-slate-900">
-                <button onClick={() => onNavigate('/engagement-models')} className="text-blue-400 font-semibold hover:underline text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/engagement-models")}
+                  className="text-blue-400 font-semibold hover:underline text-left cursor-pointer"
+                >
                   Engagement Models & ODC →
                 </button>
               </li>
@@ -245,47 +380,74 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
             </h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <button onClick={() => onNavigate('/about')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/about")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   About Us (10+ Years)
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/case-studies')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/case-studies")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Case Studies & Proof
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/resources')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/resources")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Tech Blog & Insights
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/careers')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/careers")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Careers & Hiring
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/contact')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/contact")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Contact & Locations
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/privacy-policy')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/privacy-policy")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/terms')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/terms")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Terms & Conditions
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/data-security-policy')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/data-security-policy")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   Data Security Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('/sitemap')} className="hover:text-blue-400 transition-colors text-left cursor-pointer">
+                <button
+                  onClick={() => onNavigate("/sitemap")}
+                  className="hover:text-blue-400 transition-colors text-left cursor-pointer"
+                >
                   HTML & XML Sitemap
                 </button>
               </li>
@@ -298,16 +460,37 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenConsultation }
       <div className="border-t border-slate-900 bg-slate-950 py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <div>
-            © {currentYear} EVD Technology. All Rights Reserved. Built with enterprise software engineering discipline.
+            © {currentYear} EVD Technology. All Rights Reserved. Built with
+            enterprise software engineering discipline.
           </div>
           <div className="flex items-center gap-4 flex-wrap">
-            <button onClick={() => onNavigate('/privacy-policy')} className="hover:text-slate-300 transition-colors cursor-pointer">Privacy</button>
+            <button
+              onClick={() => onNavigate("/privacy-policy")}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Privacy
+            </button>
             <span>•</span>
-            <button onClick={() => onNavigate('/terms')} className="hover:text-slate-300 transition-colors cursor-pointer">Terms</button>
+            <button
+              onClick={() => onNavigate("/terms")}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Terms
+            </button>
             <span>•</span>
-            <button onClick={() => onNavigate('/data-security-policy')} className="hover:text-slate-300 transition-colors cursor-pointer">Security</button>
+            <button
+              onClick={() => onNavigate("/data-security-policy")}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Security
+            </button>
             <span>•</span>
-            <button onClick={() => onNavigate('/sitemap')} className="hover:text-slate-300 transition-colors cursor-pointer">Sitemap</button>
+            <button
+              onClick={() => onNavigate("/sitemap")}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Sitemap
+            </button>
             <span>•</span>
             <span className="text-blue-400 font-mono">Raipur, CG, India</span>
           </div>
